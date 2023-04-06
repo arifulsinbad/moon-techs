@@ -4,7 +4,10 @@ import About from "../pages/About";
 import Cart from "../pages/Cart";
 import Home from "../pages/Home";
 import TopRated from "../pages/TopRated";
-
+import Dashboard from "../layout/Dashboard/Dashboard";
+import ProductList from "../pages/Dashboard/ProductList";
+import AddProduct from "../pages/Dashboard/AddProduct";
+import UpdateProduct from "../pages/UpdateProduct";
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +28,24 @@ const routes = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <ProductList />,
+      },
+      {
+        path: "add-product",
+        element: <AddProduct />,
+      },
+      {
+        path: "/dashboard/update-product",
+        element: <UpdateProduct />,
       },
     ],
   },
